@@ -1,0 +1,416 @@
+/* -------------------- */
+
+body {
+  margin: 0;
+  background: white;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: beige;
+  padding: 15px 30px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 24px;
+  color: salmon;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.nav-links button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.lychee-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: black;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+.overlay-text h1 {
+  font-size: 48px;
+  color: red;
+  margin: 0 0 10px;
+}
+
+.overlay-text h2 {
+  font-size: 36px;
+  color: magenta;
+  margin: 0 0 10px;
+}
+
+.overlay-text a {
+  color: blue;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* History of Lychee */
+.history-content h1 {
+  text-align: center;
+}
+
+.history-content p {
+  text-align: justify;
+  margin: 20px auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lychee-image {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+/* Flash Cards */
+.flashcard-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+.flashcards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.flashcard {
+  width: 250px;
+  height: 160px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+.flashcard:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  font-size: 16px;
+}
+
+.card-front {
+  background-color: #ffe5e5;
+  color: #333;
+}
+
+.card-back {
+  background-color: #fff5f5;
+  color: #444;
+  transform: rotateY(180deg);
+}
+
+/* Flashcards Responsive */
+@media screen and (max-width: 800px) {
+  .flashcards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flashcard {
+    width: 90%;
+    height: auto;
+  }
+
+  .overlay-text h1 {
+    font-size: 32px;
+  }
+
+  .overlay-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* Lychee Subspecies Cards */
+.subspecies-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  color: #333;
+}
+
+.subspecies-section h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #cc0000;
+}
+
+.subspecies-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.subspecies-card {
+  background-color: #fff0f0;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.subspecies-card:hover {
+  transform: translateY(-5px);
+}
+
+.subspecies-card h3 {
+  margin-top: 0;
+  color: #b30000;
+}
+
+.subspecies-card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Responsive subspecies cards */
+@media screen and (max-width: 800px) {
+  .subspecies-card {
+    width: 90%;
+  }
+
+  .subspecies-section h1 {
+    font-size: 28px;
+  }
+}
+
+.origin-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.origin-section h2 {
+  color: #cc0000;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.origin-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.origin-section li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.banner {
+  background-image: url('lychee-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.banner p {
+  font-size: 20px;
+  text-shadow: 1px 1px 3px black;
+}
+
+@media screen and (max-width: 800px) {
+  .banner h1 {
+    font-size: 32px;
+  }
+  .banner p {
+    font-size: 16px;
+  }
+}
+
+P#center {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fdfdfd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+}
+
+fieldset {
+  background-color: #fff9f0;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #ffd5b4;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  color: #c0392b;
+  padding: 0 10px;
+}
+
+button {
+  background-color: #d62d20;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #b82016;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-color: #f2f2f2;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#lychee {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: top 0.3s ease, left 0.3s ease;
+}
+
+#score {
+  font-size: 24px;
+  color: #d30000;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #lychee {
+    width: 60px;
+    height: 60px;
+  }
+
+  .overlay-text {
+    top: 10%;
+    left: 5%;
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+
+
+.spinning-button:hover {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: palevioletred;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  /* Animation */
+  animation: spin 1.5s;
+}
+
+@keyframes spin { 
+   100% { transform: rotate(360deg); } 
+}
+
+html {
+  scroll-behavior: smooth;
+}

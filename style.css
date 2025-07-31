@@ -98,6 +98,7 @@ body {
 }
 
 /* Flash Cards */
+/* Adds padding and center align text with background colours */
 .flashcard-section {
   text-align: center;
   padding: 50px 20px;
@@ -105,6 +106,7 @@ body {
   color: #222;
 }
 
+/* Use flex to lay out cards and centers content with gap inbetween each other */
 .flashcards {
   display: flex;
   flex-wrap: wrap;
@@ -113,12 +115,16 @@ body {
   margin-top: 30px;
 }
 
+/* add a fixed width and height for the card and perspective to help with 3d flipping */
 .flashcard {
   width: 250px;
   height: 160px;
   perspective: 1000px;
 }
 
+/* Makes it so that there are two faces in the card. */
+/* Transform-style to do a 3d flip */
+/* Transition to smooth the flip */
 .card-inner {
   width: 100%;
   height: 100%;
@@ -128,6 +134,7 @@ body {
   cursor: pointer;
 }
 
+/* Flip on hover or clicked (mobile) */
 .flashcard:hover .card-inner {
   transform: rotateY(180deg);
 }
@@ -354,10 +361,11 @@ button:hover {
   padding-top: 20px;
 }
 
+/* Lychee game image */
 #lychee {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   cursor: pointer;
   transition: top 0.3s ease, left 0.3s ease;
@@ -413,4 +421,11 @@ button:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+.qr-code {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }

@@ -373,7 +373,7 @@ button:hover {
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .mobile-controls {
     display: none; /* Hide buttons on desktop */
   }
@@ -518,6 +518,5 @@ html {
 
 @media (max-width:800px){ 
 #qrCodeImg{display:none;} 
-h1{background: lightgreen;}
 h1::after{content:"(mobile)";}
 }

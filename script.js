@@ -12,7 +12,7 @@ function changeHeroImage() {
   // Fade out effect
   heroImage.style.opacity = 0;
 
-  // After 500ms change image and fade back in
+  // After 500ms then change image and fade back in
   setTimeout(() => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     heroImage.src = images[currentImageIndex];
@@ -81,6 +81,14 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+document.getElementById("left-btn").addEventListener("click", () => {
+  basketX = Math.max(0, basketX - 40);
+});
+
+document.getElementById("right-btn").addEventListener("click", () => {
+  basketX = Math.min(window.innerWidth - 100, basketX + 40);
+});
+
 update();
 
 
@@ -108,6 +116,7 @@ function checkQuiz() {
   result.style.color = score === total ? "green" : "orange";
 }
 
+// Full screen
 const btnFS=document.querySelector("#btnFS");
 const btnWS=document.querySelector("#btnWS");
 btnFS.addEventListener("click",enterFullscreen);
@@ -135,6 +144,7 @@ document.msExitFullscreen();
 }
 }
 
+// Hamburger Menu Toggle
 function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('active');

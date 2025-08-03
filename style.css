@@ -52,6 +52,8 @@ body {
   cursor: pointer;
 }
 
+/* Main page */
+
 .hero-section {
   position: relative;
   width: 100%;
@@ -96,7 +98,9 @@ body {
   font-size: 14px;
 }
 
+
 /* History of Lychee */
+
 .history-content h1 {
   text-align: center;
 }
@@ -108,7 +112,9 @@ body {
   line-height: 1.6;
 }
 
+
 /* Flash Cards */
+
 .flashcard-section {
   text-align: center;
   padding: 50px 20px;
@@ -171,6 +177,7 @@ body {
 }
 
 /* Lychee Subspecies Cards */
+
 .subspecies-section {
   padding: 60px 20px;
   background-color: #fff;
@@ -272,6 +279,7 @@ P#center {
   border-radius: 8px;
 }
 
+/* Quiz Game */
 fieldset {
   background-color: #fff9f0;
   padding: 20px;
@@ -307,6 +315,7 @@ button:hover {
   font-size: 18px;
 }
 
+/* Lychee Catch Game */
 .game-container {
   position: relative;
   width: 100%;
@@ -342,6 +351,32 @@ button:hover {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
+}
+
+.mobile-controls {
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 20;
+}
+
+.mobile-controls button {
+  font-size: 2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff6f61;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobile-controls {
+    display: none; /* Hide buttons on desktop */
+  }
 }
 
 .spinning-button:hover {
@@ -481,8 +516,8 @@ html {
   }
 }
 
-@media (max-width:800px){ /*at mobile size*/
-#qrCodeImg{display:none;} /*hide QR code */
+@media (max-width:800px){ 
+#qrCodeImg{display:none;} 
 h1{background: lightgreen;}
-h1::after{content:"(mobile)";}/*append text 'mobile’ */
+h1::after{content:"(mobile)";}
 }

@@ -15,11 +15,25 @@ body {
   padding: 15px 30px;
   color: white;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .logo {
   font-size: 24px;
   color: salmon;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 3px;
 }
 
 .nav-links a {
@@ -49,6 +63,8 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
 }
 
 .overlay-text {
@@ -92,13 +108,7 @@ body {
   line-height: 1.6;
 }
 
-.lychee-image {
-  transition: opacity 1s ease-in-out;
-  opacity: 1;
-}
-
 /* Flash Cards */
-/* Adds padding and center align text with background colours */
 .flashcard-section {
   text-align: center;
   padding: 50px 20px;
@@ -106,7 +116,6 @@ body {
   color: #222;
 }
 
-/* Use flex to lay out cards and centers content with gap inbetween each other */
 .flashcards {
   display: flex;
   flex-wrap: wrap;
@@ -115,16 +124,12 @@ body {
   margin-top: 30px;
 }
 
-/* add a fixed width and height for the card and perspective to help with 3d flipping */
 .flashcard {
   width: 250px;
   height: 160px;
   perspective: 1000px;
 }
 
-/* Makes it so that there are two faces in the card. */
-/* Transform-style to do a 3d flip */
-/* Transition to smooth the flip */
 .card-inner {
   width: 100%;
   height: 100%;
@@ -134,7 +139,6 @@ body {
   cursor: pointer;
 }
 
-/* Flip on hover or clicked (mobile) */
 .flashcard:hover .card-inner {
   transform: rotateY(180deg);
 }
@@ -164,27 +168,6 @@ body {
   background-color: #fff5f5;
   color: #444;
   transform: rotateY(180deg);
-}
-
-/* Flashcards Responsive */
-@media screen and (max-width: 800px) {
-  .flashcards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .flashcard {
-    width: 90%;
-    height: auto;
-  }
-
-  .overlay-text h1 {
-    font-size: 32px;
-  }
-
-  .overlay-text h2 {
-    font-size: 24px;
-  }
 }
 
 /* Lychee Subspecies Cards */
@@ -231,17 +214,6 @@ body {
   line-height: 1.5;
 }
 
-/* Responsive subspecies cards */
-@media screen and (max-width: 800px) {
-  .subspecies-card {
-    width: 90%;
-  }
-
-  .subspecies-section h1 {
-    font-size: 28px;
-  }
-}
-
 .origin-section {
   background: #f9f9f9;
   padding: 50px 20px;
@@ -285,15 +257,6 @@ body {
   text-shadow: 1px 1px 3px black;
 }
 
-@media screen and (max-width: 800px) {
-  .banner h1 {
-    font-size: 32px;
-  }
-  .banner p {
-    font-size: 16px;
-  }
-}
-
 P#center {
   text-align: center;
   font-size: 18px;
@@ -307,13 +270,6 @@ P#center {
   background: #fdfdfd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-}
-
-@media screen and (max-width: 800px) {
-  .container {
-    margin: 20px 10px;
-    padding: 15px;
-  }
 }
 
 fieldset {
@@ -361,7 +317,6 @@ button:hover {
   padding-top: 20px;
 }
 
-/* Lychee game image */
 #lychee {
   position: absolute;
   width: 160px;
@@ -376,32 +331,6 @@ button:hover {
   color: #d30000;
 }
 
-@media screen and (max-width: 800px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #lychee {
-    width: 60px;
-    height: 60px;
-  }
-
-  .overlay-text {
-    top: 10%;
-    left: 5%;
-    max-width: 90%;
-    padding: 15px;
-  }
-}
-
-
 .spinning-button:hover {
   padding: 12px 24px;
   font-size: 16px;
@@ -410,13 +339,11 @@ button:hover {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-
-  /* Animation */
   animation: spin 1.5s;
 }
 
-@keyframes spin { 
-   100% { transform: rotate(360deg); } 
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
 
 html {
@@ -428,4 +355,115 @@ html {
   margin: 20px auto;
   border: 2px solid #ccc;
   border-radius: 10px;
+}
+
+/* ---------------------- */
+
+/* Mobile RWS */
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: beige;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 10px 20px;
+  }
+
+  .flashcards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flashcard {
+    width: 90%;
+    height: auto;
+  }
+
+  .overlay-text {
+    top: 10%;
+    left: 5%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .overlay-text h1 {
+    font-size: 32px;
+  }
+
+  .overlay-text h2 {
+    font-size: 24px;
+  }
+
+  .banner h1 {
+    font-size: 32px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .subspecies-card {
+    width: 90%;
+  }
+
+  .subspecies-section h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  .subspecies-section,
+  .origin-section,
+  .flashcard-section,
+  .container {
+    padding: 30px 10px;
+  }
+
+  .subspecies-card p,
+  .origin-section li,
+  .history-content p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #lychee {
+    width: 60px;
+    height: 60px;
+  }
+
+  .qr-code {
+    width: 80%;
+    max-width: 200px;
+  }
 }

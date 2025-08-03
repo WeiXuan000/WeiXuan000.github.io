@@ -31,43 +31,57 @@ document.querySelectorAll(".flashcard").forEach((card) => {
 
 // Lychee Catch Game
 const lychee = document.getElementById("lychee");
+const basket = document.getElementById("basket");
 const scoreDisplay = document.getElementById("score");
-const clickSound = document.getElementById("click-sound");
+const catchSound = document.getElementById("catch-sound");
+
+let basketX = window.innerWidth / 2 - 50;
+let lycheeY = -100;
+let lycheeX = Math.random() * (window.innerWidth - 50);
 let score = 0;
+let speed = 4;
 
-function getRandomPosition() {
-  const container = document.querySelector(".game-container");
-  const maxX = container.clientWidth - lychee.offsetWidth;
-  const maxY = container.clientHeight - lychee.offsetHeight;
+function update() {
+  lycheeY += speed;
+  lychee.style.top = lycheeY + "px";
+  lychee.style.left = lycheeX + "px";
+  basket.style.left = basketX + "px";
 
-  const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
+  const basketTop = window.innerHeight - 60;
+  if (
+    lycheeY >= basketTop &&
+    lycheeX + 50 > basketX &&
+    lycheeX < basketX + 100
+  ) {
+    score++;
+    scoreDisplay.textContent = "Score: " + score;
+    catchSound.currentTime = 0;
+    catchSound.play();
+    resetLychee();
+  }
 
-  lychee.style.left = `${x}px`;
-  lychee.style.top = `${y}px`;
+  if (lycheeY > window.innerHeight) {
+    resetLychee();
+  }
+
+  requestAnimationFrame(update);
 }
 
-function increaseScore() {
-  // Play the sound
-  clickSound.currentTime = 0;
-  clickSound.play();
-
-  // Increase score
-  score++;
-  scoreDisplay.textContent = score;
-
-  // Move the lychee
-  getRandomPosition();
+function resetLychee() {
+  lycheeY = -100;
+  lycheeX = Math.random() * (window.innerWidth - 50);
 }
 
-// Move the lychee every 1 second
-setInterval(getRandomPosition, 1000);
+document.addEventListener("keydown", (e) => {
+  const step = 40;
+  if (e.key === "ArrowLeft") {
+    basketX = Math.max(0, basketX - step);
+  } else if (e.key === "ArrowRight") {
+    basketX = Math.min(window.innerWidth - 100, basketX + step);
+  }
+});
 
-// Score on click
-lychee.addEventListener("click", increaseScore);
-
-// Initial position
-getRandomPosition();
+update();
 
 
 function checkQuiz() {

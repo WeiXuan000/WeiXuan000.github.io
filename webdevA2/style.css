@@ -1,0 +1,522 @@
+/* -------------------- */
+
+body {
+  margin: 0;
+  background: white;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: beige;
+  padding: 15px 30px;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  color: salmon;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 3px;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.nav-links button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* Main page */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.lychee-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: black;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+.overlay-text h1 {
+  font-size: 48px;
+  color: red;
+  margin: 0 0 10px;
+}
+
+.overlay-text h2 {
+  font-size: 36px;
+  color: magenta;
+  margin: 0 0 10px;
+}
+
+.overlay-text a {
+  color: blue;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+
+/* History of Lychee */
+
+.history-content h1 {
+  text-align: center;
+}
+
+.history-content p {
+  text-align: justify;
+  margin: 20px auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+
+/* Flash Cards */
+
+.flashcard-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+.flashcards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.flashcard {
+  width: 250px;
+  height: 160px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+.flashcard:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  font-size: 16px;
+}
+
+.card-front {
+  background-color: #ffe5e5;
+  color: #333;
+}
+
+.card-back {
+  background-color: #fff5f5;
+  color: #444;
+  transform: rotateY(180deg);
+}
+
+/* Lychee Subspecies Cards */
+
+.subspecies-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  color: #333;
+}
+
+.subspecies-section h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #cc0000;
+}
+
+.subspecies-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.subspecies-card {
+  background-color: #fff0f0;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.subspecies-card:hover {
+  transform: translateY(-5px);
+}
+
+.subspecies-card h3 {
+  margin-top: 0;
+  color: #b30000;
+}
+
+.subspecies-card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.origin-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.origin-section h2 {
+  color: #cc0000;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.origin-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.origin-section li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.banner {
+  background-image: url('lychee-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.banner p {
+  font-size: 20px;
+  text-shadow: 1px 1px 3px black;
+}
+
+P#center {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fdfdfd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Quiz Game */
+fieldset {
+  background-color: #fff9f0;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #ffd5b4;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  color: #c0392b;
+  padding: 0 10px;
+}
+
+button {
+  background-color: #d62d20;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #b82016;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Lychee Catch Game */
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+}
+
+
+#lychee {
+  position: absolute;
+  top: -100px;
+  width: 50px;
+  transition: top 0.1s;
+}
+
+
+#score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: #000;
+  z-index: 10;
+}
+
+#basket {
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: brown;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.mobile-controls {
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 20;
+}
+
+.mobile-controls button {
+  font-size: 2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff6f61;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .mobile-controls {
+    display: none; /* Hide buttons on desktop */
+  }
+}
+
+.spinning-button:hover {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: palevioletred;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: spin 1.5s;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.qr-code {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* ---------------------- */
+
+/* Mobile RWS */
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: beige;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 10px 20px;
+  }
+
+  .flashcards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flashcard {
+    width: 90%;
+    height: auto;
+  }
+
+  .overlay-text {
+    top: 10%;
+    left: 5%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .overlay-text h1 {
+    font-size: 32px;
+  }
+
+  .overlay-text h2 {
+    font-size: 24px;
+  }
+
+  .banner h1 {
+    font-size: 32px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .subspecies-card {
+    width: 90%;
+  }
+
+  .subspecies-section h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  .subspecies-section,
+  .origin-section,
+  .flashcard-section,
+  .container {
+    padding: 30px 10px;
+  }
+
+  .subspecies-card p,
+  .origin-section li,
+  .history-content p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #lychee {
+    width: 60px;
+    height: 60px;
+  }
+
+  .qr-code {
+    width: 80%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width:800px){ 
+#qrCodeImg{display:none;} 
+h1::after{content:"(mobile)";}
+}
